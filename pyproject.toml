@@ -5,3 +5,37 @@ requires = [
   "setuptools_scm>=6.0"   # optional: auto-derive version from git tags
 ]
 build-backend = "setuptools.build_meta"
+
+[project]
+name = "speclite"
+# version will be filled in by setuptools_scm at build time
+dynamic = ["version"]
+
+description = "Lightweight utilities for working with spectroscopic data"
+readme = "README.rst"
+requires-python = ">=3.6"
+license = { text = "BSD-3-Clause" }
+authors = [
+  { name = "Speclite Developers", email = "dkirkby@uci.edu" },
+]
+urls = { Homepage = "https://speclite.readthedocs.io/" }
+
+dependencies = [
+  "astropy",
+  "scipy",
+  "pyyaml",
+]
+
+[project.optional-dependencies]
+test = [
+  "pytest-astropy",
+]
+docs = [
+  "sphinx-astropy",
+]
+
+[tool.setuptools_scm]
+# Optional: write the computed version to your package
+write_to = "speclite/version.py"
+# Fallback if no Git data is available
+fallback_version = "1.0.dev0"
