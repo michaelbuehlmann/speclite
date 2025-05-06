@@ -1,0 +1,7 @@
+[build-system]
+requires = [
+  "setuptools>=61.0",     # pick a recent setuptools
+  "wheel",                # to build wheels
+  "setuptools_scm>=6.0"   # optional: auto-derive version from git tags
+]
+build-backend = "setuptools.build_meta"
